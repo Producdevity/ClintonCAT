@@ -2,11 +2,10 @@ name: Build and Publish ClintonCAT
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    tags:
+      - 'v*'
+#    branches:
+#      - main
 
 jobs:
   build:
