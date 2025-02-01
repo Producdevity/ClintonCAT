@@ -29,7 +29,7 @@ jobs:
       - name: Package Extension
         run: |
           mv dist clintoncat-chrome-extension
-          zip -r clintoncat-chrome-extension.zip clintoncat-extension/*
+          zip -r clintoncat-chrome-extension.zip clintoncat-chrome-extension/*
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
