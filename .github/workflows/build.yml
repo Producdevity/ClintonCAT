@@ -27,11 +27,14 @@ jobs:
         run: npm run build
 
       - name: Package Extension
-        run: zip -r clintoncat-extension.zip dist/*
+        run: |
+          mv dist clintoncat-chrome-extension
+          zip -r clintoncat-chrome-extension.zip clintoncat-extension/*
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           files: clintoncat-extension.zip
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_CLINTONCAT_PAT }}
