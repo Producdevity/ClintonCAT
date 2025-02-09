@@ -1,89 +1,15 @@
-// export interface IPagesDB {
-//     void updatePages();
-// }
-import escapeRegex from './utils/escapeRegex';
+import escapeRegex from '../utils/escapeRegex';
+import { IPageEntry } from './PageEntry';
+import CATWikiPageSearchResults from './CATWikiPageSearchResults';
 
-export interface IPageEntry {
-    pageTitle: string;
-    popupText: string;
-    category: string;
-}
-
-export class PageEntry implements IPageEntry {
-    static readonly WIKI_URL: string = 'https://wiki.rossmanngroup.com/wiki';
-
-    private _pageTitle: string;
-    private _popupText: string;
-    private _category: string;
-
-    constructor(pageEntry: IPageEntry) {
-        this._pageTitle = pageEntry.pageTitle;
-        this._popupText = pageEntry.popupText;
-        this._category = pageEntry.category;
-    }
-
-    get pageTitle(): string {
-        return this._pageTitle;
-    }
-
-    set pageTitle(value: string) {
-        this._pageTitle = value;
-    }
-
-    get popupText(): string {
-        return this._popupText;
-    }
-
-    set popupText(value: string) {
-        this._popupText = value;
-    }
-
-    get category(): string {
-        return this._category;
-    }
-
-    set category(value: string) {
-        this._category = value;
-    }
-
-    public url(): string {
-        return `${PageEntry.WIKI_URL}/${encodeURIComponent(this.pageTitle)}`;
-    }
-}
-
-export class CATWikiPageSearchResults {
-    private _pageEntries: IPageEntry[] = [];
-
-    constructor(pageEntries: IPageEntry[] = []) {
-        this.addPageEntries(pageEntries);
-    }
-
-    public addPageEntry(pageEntry: IPageEntry): void {
-        this._pageEntries = [...this._pageEntries, new PageEntry(pageEntry)];
-    }
-
-    public addPageEntries(pageEntries: readonly IPageEntry[]): void {
-        for (const pageEntry of pageEntries) {
-            this.addPageEntry(pageEntry);
-        }
-    }
-
-    get totalPagesFound(): number {
-        return this._pageEntries.length;
-    }
-
-    get pageEntries(): readonly IPageEntry[] {
-        return this._pageEntries;
-    }
-}
-
-export class PagesDB {
+class PagesDB {
     private pagesList: IPageEntry[] = []; // keep another local copy.
 
     public setPages(pages: IPageEntry[]) {
         // console.log('setPages', pages);
         this.pagesList = pages;
     }
+
     public getPagesForDomain(domain: string): CATWikiPageSearchResults {
         return this.fuzzySearch(domain);
     }
@@ -125,3 +51,5 @@ export class PagesDB {
         return results;
     }
 }
+
+export default PagesDB;

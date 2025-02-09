@@ -1,4 +1,5 @@
-import { PagesDB, PageEntry } from './database';
+import PagesDB from './PagesDB';
+import PageEntry from './PageEntry';
 
 describe('PagesDB', () => {
     describe('PagesDB page entries', () => {

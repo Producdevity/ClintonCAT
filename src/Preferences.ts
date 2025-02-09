@@ -1,6 +1,7 @@
-import { OrderedSetListener, ValueListener } from './listeners';
 import { IStorageBackend } from './storage/IStorageBackend';
 import { Nullable } from './utils/utils.types';
+import ValueListener from './listeners/ValueListener';
+import OrderedSetListener from './listeners/OrderedSetListener';
 
 class Preferences {
     static readonly IS_ENABLED_KEY = 'is_enabled';

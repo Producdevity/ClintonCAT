@@ -1,4 +1,5 @@
-import { PagesDB, IPageEntry } from './database';
+import PagesDB from './database/PagesDB';
+import { IPageEntry } from './database/PageEntry';
 
 export class StorageCache {
     static readonly PAGES_DB_JSON_URL: string =

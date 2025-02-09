@@ -1,9 +1,10 @@
 import Preferences from './Preferences';
-import { CATWikiPageSearchResults, PagesDB } from './database';
 import { StorageCache } from './storagecache';
 import { DomainTools } from './domaintools';
 import { ContentScanner } from './contentscanner';
 import ChromeSyncStorage from './storage/ChromeSyncStorage';
+import PagesDB from './database/PagesDB';
+import CATWikiPageSearchResults from './database/CATWikiPageSearchResults';
 
 export interface IMainMessage {
     badgeText: string;
