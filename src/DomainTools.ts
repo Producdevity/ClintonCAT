@@ -1,4 +1,4 @@
-export class DomainTools {
+class DomainTools {
     private twoLevelTLDs = ['co.uk', 'gov.uk', 'com.au', 'org.uk', 'ac.uk'];
 
     // eslint-disable-next-line @typescript-eslint/no-useless-constructor
@@ -29,3 +29,5 @@ export class DomainTools {
         return exclusions.some((excludedDomain: string) => domain.includes(excludedDomain));
     }
 }
+
+export default DomainTools;

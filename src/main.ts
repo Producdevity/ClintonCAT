@@ -1,7 +1,7 @@
 import Preferences from './Preferences';
-import { StorageCache } from './storagecache';
-import { DomainTools } from './domaintools';
-import { ContentScanner } from './contentscanner';
+import StorageCache from './StorageCache';
+import DomainTools from './DomainTools';
+import ContentScanner from './ContentScanner';
 import ChromeSyncStorage from './storage/ChromeSyncStorage';
 import PagesDB from './database/PagesDB';
 import CATWikiPageSearchResults from './database/CATWikiPageSearchResults';

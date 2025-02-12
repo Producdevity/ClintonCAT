@@ -1,7 +1,12 @@
-import { IContentScannerPlugin, IScanParameters } from '../../contentscanner';
-import { CATWikiPageSearchResults } from '../../database';
+import { IContentScannerPlugin, IScanParameters } from '../../ContentScanner';
+import CATWikiPageSearchResults from '../../database/CATWikiPageSearchResults';
 
-export class AmazonUSPageScanner implements IContentScannerPlugin {
+function fakeAsync() {
+    console.log('TODO: implement async scanner');
+    return Promise.resolve();
+}
+
+class AmazonUSPageScanner implements IContentScannerPlugin {
     metaInfo(): string {
         return 'amazon.com';
     }
@@ -10,9 +15,11 @@ export class AmazonUSPageScanner implements IContentScannerPlugin {
         return params.mainDomain === 'amazon' && params.domain.endsWith('com');
     }
 
-    // eslint-disable-next-line @typescript-eslint/require-await
     async scan(params: IScanParameters): Promise<CATWikiPageSearchResults> {
         console.log(`Amazon US Scanner: ${params.domain} - ${params.mainDomain}`);
+        await fakeAsync();
         return new CATWikiPageSearchResults();
     }
 }
+
+export default AmazonUSPageScanner;

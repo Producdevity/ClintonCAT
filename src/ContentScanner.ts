@@ -2,7 +2,7 @@
 import CATWikiPageSearchResults from './database/CATWikiPageSearchResults';
 
 const context: __WebpackModuleApi.RequireContext = require.context('./contentscanners', true, /\.ts$/, 'sync');
-import { DefaultScanner } from './contentscanners/default';
+import DefaultScanner from './contentscanners/DefaultScanner';
 import { IDOMHelperInterface, DOMHelper, DOMHelperMessageType } from './domhelper';
 import PagesDB from './database/PagesDB';
 
@@ -39,11 +39,11 @@ export interface IElementData {
     // innerHtml: string;  // can be a bit weighty
 }
 
-export class ContentScanner {
+class ContentScanner {
     private scannerPlugins: IContentScannerPlugin[] = [];
     private defaultScannerPlugin: IContentScannerPlugin = new DefaultScanner();
     private domHelper: IDOMHelperInterface = new DOMHelper();
-    private scanCache: Map<string, Promise<CATWikiPageSearchResults>> = new Map();
+    private scanCache = new Map<string, Promise<CATWikiPageSearchResults>>();
 
     constructor() {
         this.findScannerPlugins();
@@ -115,3 +115,5 @@ export class ContentScanner {
         });
     }
 }
+
+export default ContentScanner;

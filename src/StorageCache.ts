@@ -1,7 +1,7 @@
 import PagesDB from './database/PagesDB';
 import { IPageEntry } from './database/PageEntry';
 
-export class StorageCache {
+class StorageCache {
     static readonly PAGES_DB_JSON_URL: string =
         'https://raw.githubusercontent.com/WayneKeenan/ClintonCAT/refs/heads/main/data/pages_db_v2.json';
     static readonly UPDATE_ALARM_NAME: string = 'updatePagesDB';
@@ -94,3 +94,5 @@ export class StorageCache {
         return '';
     }
 }
+
+export default StorageCache;

@@ -1,5 +1,6 @@
-import { IContentScannerPlugin, IScanParameters, IElementData } from '../contentscanner';
-import { CATWikiPageSearchResults, PageEntry } from '../database';
+import { IContentScannerPlugin, IScanParameters, IElementData } from '../ContentScanner';
+import CATWikiPageSearchResults from '../database/CATWikiPageSearchResults';
+import PageEntry from '../database/PageEntry';
 
 // Simple test for simple test page, e.g.
 // https://waynekeenan.github.io/ClintonCAT/tests/www/3products_1cat.html

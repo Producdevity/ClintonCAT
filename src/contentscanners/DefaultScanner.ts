@@ -1,7 +1,7 @@
-import { IContentScannerPlugin, IScanParameters } from '../contentscanner';
-import { CATWikiPageSearchResults } from '../database';
+import { IContentScannerPlugin, IScanParameters } from '../ContentScanner';
+import CATWikiPageSearchResults from '../database/CATWikiPageSearchResults';
 
-export class DefaultScanner implements IContentScannerPlugin {
+class DefaultScanner implements IContentScannerPlugin {
     metaInfo(): string {
         return 'default scanner';
     }
@@ -17,3 +17,5 @@ export class DefaultScanner implements IContentScannerPlugin {
         return params.pagesDb.simpleSearch(pText);
     }
 }
+
+export default DefaultScanner;
