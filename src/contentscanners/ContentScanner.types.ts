@@ -2,7 +2,7 @@
 import CATWikiPageSearchResults from '../database/CATWikiPageSearchResults';
 import PagesDB from '../database/PagesDB';
 
-import { IDOMHelperInterface, DOMHelperMessageType } from '../domhelper';
+import { IDOMHelperInterface, DOMHelperMessageType } from '../DOMHelper';
 
 export interface IContentScannerPlugin {
     metaInfo(): string;

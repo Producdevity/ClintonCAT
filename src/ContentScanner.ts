@@ -3,7 +3,7 @@ import CATWikiPageSearchResults from './database/CATWikiPageSearchResults';
 
 const context: __WebpackModuleApi.RequireContext = require.context('./contentscanners', true, /\.ts$/, 'sync');
 import DefaultScanner from './contentscanners/DefaultScanner';
-import { IDOMHelperInterface, DOMHelper, DOMHelperMessageType } from './domhelper';
+import DOMHelper, { IDOMHelperInterface, DOMHelperMessageType } from './DOMHelper';
 import PagesDB from './database/PagesDB';
 
 export interface IContentScannerPlugin {

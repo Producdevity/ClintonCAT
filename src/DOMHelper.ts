@@ -16,7 +16,7 @@ export enum DOMHelperMessageType {
     DOM_CREATE_ELEMENT = 'DOM_CREATE_ELEMENT',
 }
 
-export class DOMHelper implements IDOMHelperInterface {
+class DOMHelper implements IDOMHelperInterface {
     public async querySelectorAll(selector: string): Promise<IElementData[]> {
         console.log('querySelectorAll: ', selector);
         return (await this.sendMessageToCurrentTab({
@@ -220,3 +220,5 @@ export class DOMHelper implements IDOMHelperInterface {
         });
     }
 }
+
+export default DOMHelper;

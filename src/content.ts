@@ -1,4 +1,4 @@
-import { DOMHelper } from './domhelper';
+import DOMHelper from './DOMHelper';
 
 DOMHelper.registerMessageListener();
 
